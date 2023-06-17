@@ -34,6 +34,14 @@ if (app.Environment.IsDevelopment())
     await initializer.SeedAsync();
 }
 
+// TODO: refactor below to properly configure CORS
+app.UseCors(options =>
+{
+    options.AllowAnyOrigin();
+    options.AllowAnyMethod();
+    options.AllowAnyHeader();
+});
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
