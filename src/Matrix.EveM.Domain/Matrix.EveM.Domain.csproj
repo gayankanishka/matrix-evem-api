@@ -7,11 +7,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Dtos\" />
-      <Folder Include="Entities\" />
-      <Folder Include="Enums\" />
-      <Folder Include="Exceptions\" />
-      <Folder Include="Interfaces\" />
+      <Folder Include="Vendors\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Matrix.EveM.Contracts\Matrix.EveM.Contracts.csproj" />
     </ItemGroup>
 
 </Project>
