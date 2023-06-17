@@ -1,6 +1,6 @@
 using Matrix.EveM.Domain.Common;
 
-namespace Matrix.EveM.Domain.Vendors.Exceptions;
+namespace Matrix.EveM.Domain.Exceptions;
 
 public class NotFoundException : EveMException
 {

@@ -1,5 +1,8 @@
+using FluentValidation.Results;
+using Matrix.EveM.Api.Filters;
 using Matrix.EveM.Contracts.Vendors.Requests;
 using Matrix.EveM.Contracts.Vendors.Responses;
+using Matrix.EveM.Domain.Exceptions;
 using Matrix.EveM.Domain.Vendors.Entities;
 using Matrix.EveM.Domain.Vendors.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +13,7 @@ namespace Matrix.EveM.Api.Controllers;
 /// The <see cref="VendorsController"/> class defines the API endpoints for <see cref="Vendor"/>.
 /// </summary>
 [ApiController]
+[ApiExceptionFilter]
 [Route("api/[controller]")]
 public class VendorsController : ControllerBase
 {
@@ -67,6 +71,14 @@ public class VendorsController : ControllerBase
         [FromBody] CreateVendorRequest createVendorRequest,
         CancellationToken cancellationToken = default)
     {
+        var validator = new CreateVendorRequestValidator();
+        var validationResult = await validator.ValidateAsync(createVendorRequest, cancellationToken);
+
+        if (!validationResult.IsValid)
+        {
+            ThrowValidationException(validationResult);
+        }
+        
         var vendorId = await _vendorService.CreateVendorAsync(createVendorRequest, cancellationToken);
         return Created($"api/vendors/{vendorId}", vendorId);
     }
@@ -96,6 +108,14 @@ public class VendorsController : ControllerBase
             return BadRequest();
         }
         
+        var validator = new UpdateVendorRequestValidator();
+        var validationResult = await validator.ValidateAsync(updateVendorRequest, cancellationToken);
+        
+        if (!validationResult.IsValid)
+        {
+            ThrowValidationException(validationResult);
+        }
+        
         await _vendorService.UpdateVendorAsync(updateVendorRequest, cancellationToken);
         return NoContent();
     }
@@ -118,5 +138,11 @@ public class VendorsController : ControllerBase
     {
         await _vendorService.DeleteVendorAsync(vendorId, cancellationToken);
         return NoContent();
+    }
+    
+    private void ThrowValidationException(ValidationResult validationResult)
+    {
+        List<ValidationFailure> failures = validationResult.Errors.ToList();
+        throw new ValidationException(failures);
     }
 }

@@ -1,8 +1,8 @@
 using Mapster;
 using Matrix.EveM.Contracts.Vendors.Requests;
 using Matrix.EveM.Contracts.Vendors.Responses;
+using Matrix.EveM.Domain.Exceptions;
 using Matrix.EveM.Domain.Vendors.Entities;
-using Matrix.EveM.Domain.Vendors.Exceptions;
 using Matrix.EveM.Domain.Vendors.Interfaces;
 
 namespace Matrix.EveM.Service;
