@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{883CF04A-9600-4434-9E51-9C42C4AE5189}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix.EveM.Dal", "src\Matrix.EveM.Dal\Matrix.EveM.Dal.csproj", "{CBC24EF4-269A-4400-B3FA-10B39B3342DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix.EveM.Domain", "src\Matrix.EveM.Domain\Matrix.EveM.Domain.csproj", "{5AE9C92B-23E5-43B2-8A04-5F61158AAFE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix.EveM.Api", "src\Matrix.EveM.Api\Matrix.EveM.Api.csproj", "{1B73708B-A582-4223-B378-7AEE32711A9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix.EveM.Service", "src\Matrix.EveM.Service\Matrix.EveM.Service.csproj", "{249CC649-CAD8-4FA9-9459-C6D8385C5FC6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{83415154-9351-4764-8170-E0C7E6E26FFA}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBC24EF4-269A-4400-B3FA-10B39B3342DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBC24EF4-269A-4400-B3FA-10B39B3342DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBC24EF4-269A-4400-B3FA-10B39B3342DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBC24EF4-269A-4400-B3FA-10B39B3342DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AE9C92B-23E5-43B2-8A04-5F61158AAFE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AE9C92B-23E5-43B2-8A04-5F61158AAFE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AE9C92B-23E5-43B2-8A04-5F61158AAFE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AE9C92B-23E5-43B2-8A04-5F61158AAFE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B73708B-A582-4223-B378-7AEE32711A9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B73708B-A582-4223-B378-7AEE32711A9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B73708B-A582-4223-B378-7AEE32711A9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B73708B-A582-4223-B378-7AEE32711A9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{249CC649-CAD8-4FA9-9459-C6D8385C5FC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{249CC649-CAD8-4FA9-9459-C6D8385C5FC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{249CC649-CAD8-4FA9-9459-C6D8385C5FC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{249CC649-CAD8-4FA9-9459-C6D8385C5FC6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CBC24EF4-269A-4400-B3FA-10B39B3342DF} = {883CF04A-9600-4434-9E51-9C42C4AE5189}
+		{5AE9C92B-23E5-43B2-8A04-5F61158AAFE2} = {883CF04A-9600-4434-9E51-9C42C4AE5189}
+		{1B73708B-A582-4223-B378-7AEE32711A9F} = {883CF04A-9600-4434-9E51-9C42C4AE5189}
+		{249CC649-CAD8-4FA9-9459-C6D8385C5FC6} = {883CF04A-9600-4434-9E51-9C42C4AE5189}
+	EndGlobalSection
+EndGlobal
