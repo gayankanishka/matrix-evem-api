@@ -26,6 +26,12 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    
+    // Initialise and seed database
+    using IServiceScope scope = app.Services.CreateScope();
+    var initializer = scope.ServiceProvider.GetRequiredService<ApplicationDbContextInitialiser>();
+    await initializer.InitialiseAsync();
+    await initializer.SeedAsync();
 }
 
 app.UseHttpsRedirection();

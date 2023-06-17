@@ -14,7 +14,8 @@ public static class ConfigureServices
         {
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
         });
-        
+
+        services.AddScoped<ApplicationDbContextInitialiser>();
         services.AddScoped<IVendorRepository, VendorRepository>();
 
         return services;
