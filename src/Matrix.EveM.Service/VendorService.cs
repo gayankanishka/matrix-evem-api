@@ -45,7 +45,21 @@ internal sealed class VendorService : IVendorService
 
     public async Task UpdateVendorAsync(UpdateVendorRequest updateVendorRequest, CancellationToken cancellationToken = default)
     {
-        var vendor = updateVendorRequest.Adapt<Vendor>();
+        var vendor = await _vendorRepository.GetVendorByIdAsync(updateVendorRequest.Id, cancellationToken);
+        
+        if (vendor is null)
+        {
+            throw new NotFoundException(nameof(Vendor), updateVendorRequest.Id);
+        }
+        
+        vendor.Name = updateVendorRequest.Name;
+        vendor.Description = updateVendorRequest.Description;
+        vendor.ContactName = updateVendorRequest.ContactName;
+        vendor.ContactEmail = updateVendorRequest.ContactEmail;
+        vendor.ContactNumber = updateVendorRequest.ContactNumber;
+        vendor.ServiceType = updateVendorRequest.ServiceType;
+        vendor.Remarks = updateVendorRequest.Remarks;
+        
         await _vendorRepository.UpdateVendorAsync(vendor, cancellationToken);
     }
 
