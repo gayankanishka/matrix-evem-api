@@ -7,14 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Vendors\" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Matrix.EveM.Contracts\Matrix.EveM.Contracts.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
       <PackageReference Include="FluentValidation" Version="11.5.1" />
     </ItemGroup>
 
